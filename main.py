@@ -50,8 +50,7 @@ def parse():
 
 def stats():
     logger.info("stats")
-    bla=[]
-    bla=[]
+    
 
 
 if __name__ == '__main__':
