@@ -18,7 +18,7 @@ import logging
 from scraper import Scraper
 from parse import Parser
 from storage import Persistor
-from bs4 import BeautifulSoup
+
 
 
 logging.basicConfig(level=logging.INFO)
@@ -50,10 +50,8 @@ def parse():
 
 def stats():
     logger.info("stats")
-    # Your code here
-    # Load pandas DataFrame and print to stdout different statistics about the data.
-    # Try to think about the data and use as different methods applicable to DataFrames.
-    # Ask yourself what would you like to know about this data (most frequent word, average price, e.t.c.)
+    bla=[]
+    bla=[]
 
 
 if __name__ == '__main__':
