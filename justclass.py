@@ -14,7 +14,6 @@ def get_html(url,params=None):
 def parse():
     html=get_html(URL)
     if html.status_code==200:
-        df=[]
         cars=[]
         #pages_count=get_pages_count(html.text)
         #for page in range(1,pages_count+1):
