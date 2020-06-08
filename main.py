@@ -68,12 +68,12 @@ if __name__ == '__main__':
     logger.info("Work started")
     #sys.argv[0]='stats'
 
-    if sys.argv[0] == 'gather':
+    if sys.argv[1] == 'gather':
         gather()
 
-    elif sys.argv[0] == 'parse':
+    elif sys.argv[1] == 'parse':
         parse()
-    elif sys.argv[0]=='stats':
+    elif sys.argv[1]=='stats':
         stats()
 
     logger.info("work ended")
