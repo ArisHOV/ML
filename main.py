@@ -1,14 +1,6 @@
 """
 
-Your task is to gather data from the Internet,
-parse it and save to a csv file
-
-To run the file you can use your ide or terminal:
-python3 -m main gather
-python3 -m main parse
-
-The logging package helps you to better track how the processes work
-It can also be used for saving the errors that arise
+I decided to parse Mazda brand cars their year, price and transmission
 
 """
 
@@ -18,6 +10,7 @@ import logging
 from scraper import Scraper
 from parse import Parser
 from storage import Persistor
+import pandas as pd
 
 
 
@@ -50,18 +43,37 @@ def parse():
 
 def stats():
     logger.info("stats")
-    
+    cars=pd.read_csv('data.csv')
+    mean=meanofprice(converttoint(cars['usd_price']))
+    print(f'mean of price: {mean}')
+
+
+
+def converttoint(prices):
+    car=[]
+    for price in prices:
+        car.append(int(price.replace('$','').replace(' ','')))
+    return car
+
+def meanofprice(prices):
+    s=0
+    for price in prices:
+        s+=price
+    s/= len(prices)
+    return s
 
 
 if __name__ == '__main__':
 
     logger.info("Work started")
-    sys.argv[0]='gather'
+    #sys.argv[0]='stats'
 
     if sys.argv[0] == 'gather':
         gather()
 
     elif sys.argv[0] == 'parse':
         parse()
+    elif sys.argv[0]=='stats':
+        stats()
 
     logger.info("work ended")

@@ -25,9 +25,9 @@ class Persistor(ABC):
     def save_csv(self, data,path):
         with open(path, 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
-            writer.writerow(['title', 'usd_price', 'transmission', 'city'])
-            for dat in data:
-                writer.writerow([dat.property_1, dat.property_2, dat.property_3, dat.property_4])
+            writer.writerow(['title', 'usd_price', 'transmission'])
+            for item in data:
+                writer.writerow([item.title, item.price, item.transmission])
 
 
     def append_data(self, data):

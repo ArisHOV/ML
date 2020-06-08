@@ -12,9 +12,9 @@ class Scraper:
         self.storage = storage
 
     def scrape(self,path):
-        """ Gives the text from ACA website """
 
-        url = 'https://auto.ria.com/newauto/marka-jeep/'
+
+        url = 'https://auto.ria.com/newauto/search/?page=1&markaId=47&size=100'
         headers={'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
                  ,'accept': '*/*'}
         response = requests.get(url)

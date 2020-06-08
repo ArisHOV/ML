@@ -1,11 +1,11 @@
 class Item:
 
-    def __init__(self, property_1=None, property_2=None, property_3=None,
-                 property_4=None):
-        self.property_1 = property_1
-        self.property_2 = property_2
-        self.property_3 = property_3
-        self.property_4 = property_4
+    def __init__(self, title=None, price=None, transmission=None,
+                 ):
+        self.title = title
+        self.price = price
+        self.transmission = transmission
+
 
 
     def __str__(self):
