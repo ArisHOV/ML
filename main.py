@@ -55,6 +55,7 @@ def converttoint(prices):
     for price in prices:
         car.append(int(price.replace('$','').replace(' ','')))
     return car
+#our price in data is not int so converting type int    
 
 def meanofprice(prices):
     s=0
@@ -62,6 +63,7 @@ def meanofprice(prices):
         s+=price
     s/= len(prices)
     return s
+#mean of price every car that have on data
 
 
 if __name__ == '__main__':
