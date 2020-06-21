@@ -37,8 +37,9 @@ def parse():
     parser = Parser()
 
     raw_data = storage.read_raw_data(SCRAPPED_FILE)
-    parsed_files = [parser.parse_object(file) for file in raw_data]
-    storage.save_csv(parsed_files,TABLE_FORMAT_FILE)
+    data=parser.process_rawdata(raw_data)  #processing raw data
+    parsed_files = [parser.parse_object(file) for file in data] #parsing every object
+    storage.save_csv(parsed_files,TABLE_FORMAT_FILE) #save our data
 
 
 def stats():

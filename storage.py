@@ -1,26 +1,18 @@
 from abc import ABC, abstractmethod
-from bs4 import BeautifulSoup
+
 import csv
-#Location of engine
-#Motor
+
 class Persistor(ABC):
-
-
-
 
     def read_raw_data(self,path):
         with open(path,'r',encoding='utf-8') as file:
             data=file.read()
-        soup = BeautifulSoup(data, 'html.parser')
-        items = soup.find_all('div', class_='proposition')
-        return items
-
+        return data
 
 
     def save_raw_data(self, data,path):
         with open(path, "w", newline='', encoding='utf-8') as file:
             file.write(data)
-
 
 
     def save_csv(self, data,path):
